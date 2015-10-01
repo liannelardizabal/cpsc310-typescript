@@ -1,19 +1,18 @@
 /// <reference path='types/DefinitelyTyped/node/node.d.ts'/>
 /// <reference path='types/DefinitelyTyped/express/express.d.ts'/>
 
-let express = require('express');
-let path = require('path');
-let favicon = require('serve-favicon');
-let logger = require('morgan');
-let cookieParser = require('cookie-parser');
-let bodyParser = require('body-parser');
+let express = require('express')
+  , path = require('path')
+  , favicon = require('serve-favicon')
+  , logger = require('morgan')
+  , cookieParser = require('cookie-parser')
+  , bodyParser = require('body-parser')
+  , mongo = require('mongodb')
+  , monk = require('monk')
+  , db = monk('localhost:27017/nodetest1')
 
-let mongo = require('mongodb');
-let monk = require('monk');
-let db = monk('localhost:27017/nodetest1');
-
-let routes = require('./routes/index');
-let users = require('./routes/users');
+  , routes = require('./routes/index')
+  , users = require('./routes/users');
 
 let app = express();
 
