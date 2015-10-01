@@ -1,7 +1,7 @@
 /// <reference path='types/DefinitelyTyped/node/node.d.ts'/>
 /// <reference path='types/DefinitelyTyped/express/express.d.ts'/>
 
-// Changed let to var
+/ *
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -17,6 +17,23 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+*/
+
+let express = require('express')
+  , path = require('path')
+  , favicon = require('serve-favicon')
+  , logger = require('morgan')
+  , cookieParser = require('cookie-parser')
+  , bodyParser = require('body-parser')
+  , mongo = require('mongodb')
+  , monk = require('monk')
+  , db = monk('localhost:27017/nodetest1')
+
+  , routes = require('./routes/index')
+  , users = require('./routes/users');
+
+let app = express();
 
 interface Error {
 
